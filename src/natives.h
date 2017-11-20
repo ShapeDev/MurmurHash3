@@ -25,13 +25,13 @@ static int f_MurmurHash3_x86_32(char* key, int len, int seed)
 {
 	int
 		result;
-	MurmurHash3_x86_32(key, len, 0, &result);
+	MurmurHash3_x86_32(key, len, seed, &result);
 	return result;
 }
 
 static void RegisterNatives(AMX* amx)
 {
-	std::vector<AMX_NATIVE_INFO> MurmurNatives {
+	std::vector<AMX_NATIVE_INFO> MurmurNatives{
 		{ "MurmurHash", n_MurmurHash3_x86_32 }
 	};
 	amx_Register(amx, MurmurNatives.data(), MurmurNatives.size());
