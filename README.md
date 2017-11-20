@@ -18,7 +18,7 @@ printf("Hash: %d",MurmurHash(key, sizeof(key), 0));
 I got `Hash: 733688637`
 
 ## Installation
-1. Download MurmurHash from [Releases][https://github.com/ShapeDev/MurmurHash3/releases] page.
+1. Download MurmurHash from [Releases](https://github.com/ShapeDev/MurmurHash3/releases) page.
 2. Extract `MurmurHash3.inc` to `./pawno/include` folder.
 3. In your mode include `MurmurHash3.inc`
 4. Extract `MurmurHash3.so` or `MurmurHash3.dll` to `./plugins` folder.
