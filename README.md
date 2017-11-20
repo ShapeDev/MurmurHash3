@@ -7,11 +7,11 @@ native MurmurHash(const key[], len, seed);
 ```
 
 ## Example
-Let's make a test hash, create variable with your string.
+Let's make a test hash. Create variable with your key string.
 ```pawn
 new key[] = "This is my test string"; 
 ```
-And now print hash in console.
+And now we'll print a hash in the console.
 ```pawn
 printf("Hash: %d",MurmurHash(key, sizeof(key), 0));
 ```
