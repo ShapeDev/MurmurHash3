@@ -28,11 +28,11 @@
 
 #include "MurmurHash3/murmur3.cpp"
 
+#include "natives.h"
+
 typedef void(*logprintf_t)(const char* format, ...);
 
 logprintf_t logprintf;
-
-#include "Natives.h"
 
 extern void *pAMXFunctions;
 
