@@ -9,10 +9,9 @@ static cell AMX_NATIVE_CALL n_MurmurHash3_x86_32(AMX* amx, cell* params)
 	cell
 		*addr;
 	int
-		len;
+		len = params[2];
 	if (amx_GetAddr(amx, params[1], &addr) == AMX_ERR_NONE)
 	{
-		amx_StrLen(addr, &len);
 		char* key = new char[len + 1];
 		amx_GetString(key, addr, 0, len + 1);
 		return f_MurmurHash3_x86_32(key, len, params[3]);

@@ -43,7 +43,7 @@ public:
 
 	static constexpr char
 		*name = "MurmurHash3",
-		*version = "0.1",
+		*version = "0.2",
 		*author = "ShapeGaz";
 
 	static void AmxLoad(AMX* amx)
