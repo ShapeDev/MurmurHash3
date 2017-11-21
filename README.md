@@ -39,9 +39,3 @@ printf("Random hash: %d",MurmurHash(key,sizeof(key),number));
 3. In your mode include `MurmurHash3.inc`
 4. Extract `MurmurHash3.so` or `MurmurHash3.dll` to `./plugins` folder.
 5. In server.cfg on line `plugins` add `MurmurHash3.dll` or `MurmurHash3.so`.
-* Also you can build source code.
-
-## Building on Linux (g++)
-1. Download Source Code.
-2. Extract all to your folder.
-3. Files from `src` f
