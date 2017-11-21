@@ -43,7 +43,7 @@
     #else
       #include <stdint.h>
     #endif
-  #elif !defined __STDC_VERSION__ || __STDC_VERSION__ < 199901L
+  #elif (!defined __STDC_VERSION__ || __STDC_VERSION__ < 199901L)
     /* The ISO C99 defines the int16_t and int_32t types. If the compiler got
      * here, these types are probably undefined.
      */
@@ -290,7 +290,7 @@ typedef struct tagAMX_HEADER {
   #define AMX_MAGIC     0xf1e1
 #endif
 
-enum 
+enum
 {
   AMX_ERR_NONE,
   /* reserve the first 15 error codes for exit codes of the abstract machine */
@@ -370,6 +370,9 @@ uint16_t * AMXAPI amx_Align16(uint16_t *v);
 uint32_t * AMXAPI amx_Align32(uint32_t *v);
 #if defined _I64_MAX || defined HAVE_I64
   uint64_t * AMXAPI amx_Align64(uint64_t *v);
+#endif
+#ifndef size_t
+typedef unsigned int size_t;
 #endif
 int AMXAPI amx_Allot(AMX *amx, int cells, cell *amx_addr, cell **phys_addr);
 int AMXAPI amx_Callback(AMX *amx, cell index, cell *result, cell *params);

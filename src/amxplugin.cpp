@@ -42,6 +42,7 @@ typedef   uint64_t *  AMXAPI (*amx_Align64_t)(uint64_t *v);
 }
 
 #endif
+
 typedef int  AMXAPI (*amx_Allot_t)(AMX *amx, int cells, cell *amx_addr, cell **phys_addr);
 int AMXAPI amx_Allot(AMX *amx, int cells, cell *amx_addr, cell **phys_addr)
 {
