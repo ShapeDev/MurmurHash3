@@ -1,8 +1,6 @@
 #ifndef NATIVES_H_
 #define NATIVES_H_
 
-static int f_MurmurHash3_x86_32(char* key, int len, int seed);
-
 // native MurmurHash3(key[], len, seed)
 static cell AMX_NATIVE_CALL n_MurmurHash3_x86_32(AMX* amx, cell* params)
 {
@@ -10,22 +8,17 @@ static cell AMX_NATIVE_CALL n_MurmurHash3_x86_32(AMX* amx, cell* params)
 		*addr;
 	int
 		len = params[2];
+	int
+		result;
 	if (amx_GetAddr(amx, params[1], &addr) == AMX_ERR_NONE)
 	{
 		char* key = new char[len + 1];
 		amx_GetString(key, addr, 0, len + 1);
-		return f_MurmurHash3_x86_32(key, len, params[3]);
+		MurmurHash3_x86_32(key, len, params[3], &result);
+		delete[] key;
+		return result;
 	}
 	return false;
-}
-
-// Functions
-static int f_MurmurHash3_x86_32(char* key, int len, int seed)
-{
-	int
-		result;
-	MurmurHash3_x86_32(key, len, seed, &result);
-	return result;
 }
 
 static void RegisterNatives(AMX* amx)
