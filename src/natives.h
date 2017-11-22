@@ -4,26 +4,16 @@
 // native MurmurHash3(key[], len, seed)
 static cell AMX_NATIVE_CALL n_MurmurHash3_x86_32(AMX* amx, cell* params)
 {
-	cell
-		*addr;
-	int
-		len = params[2];
-	int
-		result;
-	if (amx_GetAddr(amx, params[1], &addr) == AMX_ERR_NONE)
-	{
-		char* key = new char[len + 1];
-		amx_GetString(key, addr, 0, len + 1);
-		MurmurHash3_x86_32(key, len, params[3], &result);
-		delete[] key;
-		return result;
-	}
-	return false;
+	static char* key;
+	int result;
+	amx_StrParam(amx, params[1], key);
+	MurmurHash3_x86_32(key, params[2], params[2], &result);
+	return result;
 }
 
 static void RegisterNatives(AMX* amx)
 {
-	std::vector<AMX_NATIVE_INFO> MurmurNatives{
+	std::vector<AMX_NATIVE_INFO> MurmurNatives {
 		{ "MurmurHash", n_MurmurHash3_x86_32 }
 	};
 	amx_Register(amx, MurmurNatives.data(), MurmurNatives.size());
