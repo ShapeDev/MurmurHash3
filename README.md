@@ -8,12 +8,10 @@ native MurmurHash(const key[], len, seed);
 
 ## Example
 ### Example #1 - Not random hash
-#### Step one
 Let's make a test hash. Create variable with your key string
 ```pawn
 new key[] = "This is test string";
 ```
-#### Step two
 And now we'll print a hash in the console
 ```pawn
 printf("Hash: %d",MurmurHash(key,sizeof(key),0));
@@ -21,17 +19,14 @@ printf("Hash: %d",MurmurHash(key,sizeof(key),0));
 Done. I got `Hash: 733688637`
 
 ### Example #2 - Random hash
-#### Step one
 Let's make a test random hash. Create variable with your key string
 ```pawn
 new key[] = "This is test string";
 ```
-#### Step two
 Crate variable with random number
 ```pawn
 new randomvalue = random(9999);
 ```
-#### Step three
 And now we'll print a hash in the console
 ```pawn
 printf("Random hash: %d",MurmurHash(key,sizeof(key),randomvalue));
