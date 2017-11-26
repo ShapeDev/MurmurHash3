@@ -7,7 +7,7 @@ static cell AMX_NATIVE_CALL n_MurmurHash3_x86_32(AMX* amx, cell* params)
 	static char* key;
 	int result;
 	amx_StrParam(amx, params[1], key);
-	MurmurHash3_x86_32(key, params[2], params[2], &result);
+	MurmurHash3_x86_32(key, params[2], params[3], &result);
 	return result;
 }
 
