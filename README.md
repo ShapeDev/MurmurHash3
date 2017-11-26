@@ -33,8 +33,8 @@ printf("Random hash: %d",MurmurHash(key,sizeof(key),randomvalue));
 ```
 
 ## Installation
-1. Download MurmurHash from [Releases](https://github.com/ShapeDev/MurmurHash3/releases) page
-2. Extract `MurmurHash.inc` to folder `pawno/include`
-3. In your mode include MurmurHash (`#include <MurmurHash>`)
-4. Extract `MurmurHash.so` or `MurmurHash.dll` to folder `plugins`
-5. In server.cfg on line `plugins` add `MurmurHash.dll` or `MurmurHash.so`
+1. Download MurmurHash3 from [Releases](https://github.com/ShapeDev/MurmurHash3/releases) page
+2. Extract `MurmurHash3.inc` to folder `pawno/include`
+3. In your mode include MurmurHash3 (`#include <MurmurHash3>`)
+4. Extract `MurmurHash3.so` or `MurmurHash3.dll` to folder `plugins`
+5. In server.cfg on line `plugins` add `MurmurHash3.dll` or `MurmurHash3.so`
