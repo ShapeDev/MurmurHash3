@@ -21,17 +21,15 @@
 	SOFTWARE.
 
 */
-#include "amx\amx.h"
-#include "plugincommon.h"
+#include "SDK/amx/amx.h"
+#include "SDK/plugincommon.h"
 
 #include <vector>
 
 #include "MurmurHash3/murmur3.cpp"
-
 #include "natives.h"
 
 typedef void(*logprintf_t)(const char* format, ...);
-
 logprintf_t logprintf;
 
 extern void *pAMXFunctions;

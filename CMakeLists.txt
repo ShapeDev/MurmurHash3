@@ -6,8 +6,7 @@ include(AMXConfig)
 include(AddSAMPPlugin)
 
 include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}/src
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/amx
+  ${CMAKE_CURRENT_SOURCE_DIR}  ${CMAKE_CURRENT_SOURCE_DIR}/SDK  ${CMAKE_CURRENT_SOURCE_DIR}/SDK/amx
 )
 
 add_samp_plugin(MurmurHash3  amxplugin.cpp
